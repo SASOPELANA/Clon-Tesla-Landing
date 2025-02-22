@@ -1,5 +1,6 @@
 ---
 import Section from "./Section.astro";
+import Imagen1 from '../../public/Img/fz.jpg'
 ---
 
 <Section
@@ -30,7 +31,7 @@ import Section from "./Section.astro";
     slot="background"
     alt="Modelo Fz"
     class="h-full w-full object-cover object-center bg-image"
-    src="../../public/Img/fz.jpg"
+    src={Imagen1.src}
     id="bg-image-modely"
   />
 </Section>
