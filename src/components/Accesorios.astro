@@ -1,0 +1,28 @@
+---
+import Section from "../components/Section.astro";
+import Accessorios from "../../public/Img/casco.jpg";
+---
+
+<Section
+  title="Accesorios"
+  subtitle="Accesorios para su Moto"
+  color="black"
+  id="accesorios"
+  showFooterContent="true"
+>
+  <div slot="footer">
+    <a
+      class="text-black text-sm border-[3px] border-white bg-white/50 backdrop-blur-sm rounded font-medium px-12 py-2 inline-block
+                hover:bg-white hover:text-black transition-colors"
+      href="#accesorios">Conosca los accesorios</a
+    >
+  </div>
+
+  <img
+    slot="background"
+    alt="Modelo Fz"
+    class="h-full w-full object-cover object-center bg-image"
+    src={Accessorios.src}
+    id="bg-image-modely"
+  />
+</Section>
