@@ -10,7 +10,7 @@ import Motos from "../components/Logo.astro";
     <a href="./"><Motos class="logo text-white w-28 h-6" /></a>
   </div>
 
-  <nav>
+  <nav class="hidden xl:block sm:hidden">
     <!-- Selecionar varios elementos con tailwind para aplicar estilos -->
     <ul
       class="flex text-sm [&>li>a]:transition-colors [&>li>a]:duration-500 [&>li>a]:text-current [&>li>a]:font-semibold [&>li>a]:inline-block [&>li>a]:px-4 [&>li>a]:py-2"
@@ -27,10 +27,75 @@ import Motos from "../components/Logo.astro";
     <ul
       class="flex text-sm [&>li>a]:transition-colors [&>li>a]:duration-500 [&>li>a]:text-current [&>li>a]:font-semibold [&>li>a]:inline-block [&>li>a]:px-4 [&>li>a]:py-2"
     >
-      <li><a href="#">Soporte</a></li>
-      <li><a href="#">Tienda</a></li>
-      <li><a href="#">Cuenta</a></li>
-      <li><a href="#">Menú</a></li>
+      <li class="hidden xl:block sm:hidden"><a href="#">Soporte</a></li>
+      <li class="hidden xl:block sm:hidden"><a href="#">Tienda</a></li>
+      <li class="hidden xl:block sm:hidden"><a href="#">Cuenta</a></li>
+      <li><a id="menu-btn" href="#">Menú</a></li>
+    </ul>
+  </nav>
+
+  <nav
+    id="modal-menu"
+    class="hidden flex-col bg-white/90 fixed top-0 right-0 bottom-0 w-full xl:w-1/4 xl:overflow-auto"
+  >
+    <button id="close-btn" class="w-full flex justify-end p-5 items-end">
+      <img class="text-black h-6" src="/close-icon.svg" alt="close image" />
+    </button>
+    <ul
+      class="flex flex-col mt-4 [&>li>a]:transition-colors [&>li]:m-3 [&>li>a]:flex [&>li>a]:justify-between [&>li>a]:duration-200 [&>li>a]:text-black [&>li>a]:font-medium [&>li>a]:px-6 [&>li>a]:py-3 [&>li>a]:rounded-md [&>li>a]:w-full"
+    >
+      <li>
+        <a class="hover:bg-slate-100" href="#home">
+          Motovehiculos <img
+            class="h-5"
+            alt="arrow icon"
+            src="/arrow-icon.svg"
+          /></a
+        >
+      </li>
+      <li>
+        <a class="hover:bg-slate-100" href="#fz-250"
+          >FZ 250<img class="h-5" alt="arrow icon" src="/arrow-icon.svg" /></a
+        >
+      </li>
+      <li>
+        <a class="hover:bg-slate-100" href="#benelli-2025"
+          >Benelli Eicma<img
+            class="h-5"
+            alt="arrow icon"
+            src="/arrow-icon.svg"
+          /></a
+        >
+      </li>
+      <li>
+        <a class="hover:bg-slate-100" href="#ninja-zx"
+          >Ninja ZX<img class="h-5" alt="arrow icon" src="/arrow-icon.svg" /></a
+        >
+      </li>
+      <li>
+        <a class="hover:bg-slate-100" href="#accesorios"
+          >Accesorios<img
+            class="h-5"
+            alt="arrow icon"
+            src="/arrow-icon.svg"
+          /></a
+        >
+      </li>
+      <li>
+        <a class="hover:bg-slate-100" href="#"
+          >Soporte<img class="h-5" alt="arrow icon" src="/arrow-icon.svg" /></a
+        >
+      </li>
+      <li>
+        <a class="hover:bg-slate-100" href="#"
+          >Tienda<img class="h-5" alt="arrow icon" src="/arrow-icon.svg" /></a
+        >
+      </li>
+      <li>
+        <a class="hover:bg-slate-100" href="#"
+          >Cuenta<img class="h-5" alt="arrow icon" src="/arrow-icon.svg" /></a
+        >
+      </li>
     </ul>
   </nav>
 
@@ -46,6 +111,22 @@ import Motos from "../components/Logo.astro";
   >
   </div>
 </header>
+
+<script>
+  const menuBtn = document.getElementById("menu-btn");
+  const modalMenu = document.querySelector("#modal-menu") as HTMLElement;
+  const closeBtn = document.querySelector("#close-btn");
+
+  function toggleDropdownMenu() {
+    modalMenu.classList.toggle("hidden");
+  }
+
+  menuBtn?.addEventListener("click", toggleDropdownMenu);
+  closeBtn?.addEventListener("click", toggleDropdownMenu);
+  modalMenu.querySelectorAll("li>a").forEach((Item) => {
+    Item.addEventListener("click", toggleDropdownMenu);
+  });
+</script>
 
 <script>
   const listItem = document.querySelectorAll("#landing-header li ");
