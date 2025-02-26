@@ -1,12 +1,13 @@
 ---
 import Section from "./Section.astro";
-import imgBenelli from "../../public/Img/benelli-2025.jpg";
+import imgBenelli from "../../public/Img/benelli-trk-702.webp";
+import imgBenlliMovil from "../../public/Img/benelli-trk-702-movile.webp";
 ---
 
 <Section
-  title="Modelo Benelli Eicma"
+  title="Modelo Benelli TRK 702"
   subtitle="Concertar una prueba de conducción"
-  color="white"
+  color="black"
   id="benelli-2025"
 >
   <div slot="footer" class="gap-x-6 flex mx-auto max-md:gap-x-2 max-md:p-2">
@@ -26,9 +27,16 @@ import imgBenelli from "../../public/Img/benelli-2025.jpg";
 
   <img
     slot="background"
-    alt="Modelo Benelli Eicma"
-    class="h-full w-full object-cover object-center bg-image"
+    alt="Modelo Benelli TRK 702"
+    class="h-full w-full object-cover object-center bg-image hidden md:block"
     src={imgBenelli.src}
-    id="img-benelli"
+    id="bg-image-benelli"
+  />
+  <img
+    slot="background"
+    alt="Modelo Benelli TRK 702"
+    class="h-full w-full object-cover object-center bg-image block md:hidden"
+    src={imgBenlliMovil.src}
+    id="bg-image-benelli-mobile"
   />
 </Section>

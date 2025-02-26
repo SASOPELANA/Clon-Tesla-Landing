@@ -1,9 +1,11 @@
 ---
 import Section from "../components/Section.astro";
-import Accessorios from "../../public/Img/casco.jpg";
+import Accessorios from "../../public/Img/casco.webp";
+import AccesoriosMovil from "../../public/Img/casco-moviles.webp";
 ---
 
 <Section
+  class="bg-black"
   title="Accesorios"
   subtitle="Accesorios para su Moto"
   color="black"
@@ -20,10 +22,16 @@ import Accessorios from "../../public/Img/casco.jpg";
 
   <img
     slot="background"
-    alt="Modelo Fz"
-    class="h-full w-full object-cover object-center bg-image"
+    alt="Accessorios"
+    class="h-full w-full object-cover object-center bg-image hidden md:block"
     src={Accessorios.src}
-    id="bg-image-modely"
+    id="bg-image-accesorios"
+  />
+  <img
+    slot="background"
+    alt="Accessorios"
+    class="h-full w-full object-cover object-center bg-image block md:hidden"
+    src={AccesoriosMovil.src}
+    id="bg-image-accesorios-mobile"
   />
 </Section>
-

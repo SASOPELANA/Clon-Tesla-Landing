@@ -1,18 +1,16 @@
 ---
 import Section from "./Section.astro";
-import Imagen1 from "../../public/Img/fz.jpg";
+import Imagen1 from "../../public/Img/fz-250.webp";
+import ImgagenMovil from "../../public/Img/fz-250-moviles.webp";
 ---
 
 <Section
   title="Model FZ 250"
   subtitle="Concertar una prueba de conducción"
-  color="black"
+  color="white"
   id="fz-250"
 >
-  <div
-    slot="footer"
-    class="gap-x-6 flex mx-auto max-md:gap-x-2 max-md:p-2"
-  >
+  <div slot="footer" class="gap-x-6 flex mx-auto max-md:gap-x-2 max-md:p-2">
     <a
       class="border-[3px] border-white/50 bg-gray-600 text-sm rounded font-medium text-white px-12 py-2 inline-block transition-colors hover:border-gray-400 hover:bg-gray-400 max-md:px-4"
       href="#fz-250"
@@ -29,9 +27,16 @@ import Imagen1 from "../../public/Img/fz.jpg";
 
   <img
     slot="background"
-    alt="Modelo Fz"
-    class="h-full w-full object-cover object-center bg-image"
+    alt="Model FZ 250"
+    class="h-full w-full object-cover object-center bg-image hidden md:block"
     src={Imagen1.src}
-    id="bg-image-modely"
+    id="bg-image-fz-250"
+  />
+  <img
+    slot="background"
+    alt="Model FZ 250"
+    class="h-full w-full object-cover object-center bg-image block md:hidden"
+    src={ImgagenMovil.src}
+    id="bg-image-fz-250-mobile"
   />
 </Section>

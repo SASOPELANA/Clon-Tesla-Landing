@@ -1,12 +1,13 @@
 ---
 import Section from "./Section.astro";
-import ImgNinja from "../../public/Img/kawasaki-ninja-zx.jpg";
+import ImgNinja from "../../public/Img/ninja-zx-6r-black.webp";
+import ImgNinjaMovil from '../../public/Img/ninja-zx-6r-black-moviles.webp'
 ---
 
 <Section
-  title="Kawasaki Ninja ZX Blue"
+  title="Kawasaki Ninja ZX 6R Black"
   subtitle="Visite nuestro local."
-  color="black"
+  color="white"
   id="ninja-zx"
 >
   <div slot="footer" class="gap-x-6 flex mx-auto max-md:gap-x-2 max-md:p-2">
@@ -27,8 +28,15 @@ import ImgNinja from "../../public/Img/kawasaki-ninja-zx.jpg";
   <img
     slot="background"
     alt="Modelo Ninja ZX"
-    class="h-full w-full object-cover object-center bg-image"
+    class="h-full w-full object-cover object-center bg-image hidden md:block"
     src={ImgNinja.src}
     id="bg-image-ninja"
+  />
+  <img
+    slot="background"
+    alt="Modelo Ninja ZX"
+    class="h-full w-full object-cover object-center bg-image block md:hidden"
+    src={ImgNinjaMovil.src}
+    id="bg-image-ninja-mobile"
   />
 </Section>
